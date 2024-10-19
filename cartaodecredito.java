@@ -20,9 +20,10 @@ Scanner entrada = new Scanner(System.in);
         if(valor <= this.limite){
         this.limite = limite - valor; // limite -= valor;
         this.totalFatura = totalFatura + valor; // saldo += valor
+        System.out.println("A sua compra de " + valor + " foi efetuada com sucesso!");
         }
         else {
-            System.out.println("Você não possui limite necessário para essa compra");
+            System.out.println("Você não possui limite necessário para essa compra.");
         }
     }
 }
