@@ -9,38 +9,37 @@ public class principal {
         c.limite = 100;
         Scanner sc = new Scanner(System.in);
         
-        int opcao = 1;
+        int opcao;
 
-    do {
-        System.out.println("1 - Consultar Limite;");
-        System.out.println("2 - Consultar Fatura;");
-        System.out.println("3 - Realizar Compra.");
-        System.out.println("0 - Sair.");
+        do {
+            System.out.println("1 - Consultar Limite;");
+            System.out.println("2 - Consultar Fatura;");
+            System.out.println("3 - Realizar Compra.");
+            System.out.println("0 - Sair.");
         
-        opcao = sc.nextInt();
+            opcao = sc.nextInt();
 
-        switch (opcao) {
-            case 1:
-                System.out.println("Seu limite é de: " + c.consultarLimite() + " reais.");
-                break;
-            case 2:
-                System.out.println("Sua fatura está em: " + c.consultarTotalFatura() + " reais.");
-                break;
-            case 3:
-                System.out.println("Digite o valor da compra: ");
-                double valor = sc.nextDouble();
-                c.realizarCompra(valor);
-                break;
-            case 0:
-                System.out.println("Obrigado, volte sempre!");
-                break;
-        default:
-            System.out.println("Opção inválida!");
-            break;
-        }
-
-    }   while (opcao != 0);
-    
+            switch (opcao) {
+                case 1:
+                    System.out.println("Seu limite é de: " + c.consultarLimite() + " reais.");
+                    break;
+                case 2:
+                    System.out.println("Sua fatura está em: " + c.consultarTotalFatura() + " reais.");
+                    break;
+                case 3:
+                    System.out.println("Digite o valor da compra: ");
+                    double valor = sc.nextDouble();
+                    c.realizarCompra(valor);
+                    break;
+                case 0:
+                    System.out.println("Obrigado pela preferência, volte sempre!");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }
+        }   
+        while (opcao != 0);
     sc.close(); 
-}
+    }
 }
