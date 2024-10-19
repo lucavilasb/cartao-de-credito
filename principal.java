@@ -23,10 +23,10 @@ public class principal {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Seu limite é de: " + c.consultarLimite() + " reais.");
+                    System.out.println("Seu limite é de: " +c.consultarLimite()+ " reais.");
                     break;
                 case 2:
-                    System.out.println("Sua fatura está em: " + c.consultarTotalFatura() + " reais.");
+                    System.out.println("Sua fatura está em: " +c.consultarTotalFatura()+ " reais.");
                     break;
                 case 3:
                     System.out.println("Digite o valor da compra: ");
@@ -36,12 +36,11 @@ public class principal {
                 case 4:
                     System.out.println("Digite a senha de administrador: ");
                     String senhaUser = sc.next();
-                    while (!senhaUser.equals("gatinho123") && contador <= 2) {
-                        System.out.println("A senha está incorreta! Tente novamente.");
+                    while (!senhaUser.equals("gatinho123@") && contador <= 2) {
+                        System.out.println("A senha está incorreta! Tente novamente. Tentativas restantes: "+(3-contador));
                         contador++;
                         senhaUser = sc.next();
                     }
-                    System.out.println();
                     if (senhaUser.equals("gatinho123@")){
                         System.out.println("Insira um novo limite para esse cartão de crédito: ");
                         double alteracao = sc.nextDouble();
