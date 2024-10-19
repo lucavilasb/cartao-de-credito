@@ -26,4 +26,17 @@ public class cartaodecredito {
             System.out.println("Você não possui limite necessário para essa compra.");
         }
     }
+
+    public void alterarLimite(double alteracao) {
+        do {
+            if (alteracao != this.limite) {
+                this.limite = alteracao;
+                System.out.println("Limite do cartão foi atualizado com sucesso!");
+            }
+            else {
+                System.out.println("Insira um valor maior ou menor que o limite do cartão atual.");
+            }
+        }
+        while (alteracao > limite && alteracao < limite);
+    }
 }
