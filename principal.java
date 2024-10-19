@@ -5,7 +5,7 @@ public class principal {
         cartaodecredito c = new cartaodecredito();
         c.setNumero(1);
         c.setNomeTitular("Luca");
-        c.setCpf("123.456.789-99");
+        c.setCpf("12345678999");
         c.setLimite(100);
         Scanner sc = new Scanner(System.in);
         
@@ -36,15 +36,15 @@ public class principal {
                 case 4:
                     System.out.println("Digite a senha de administrador: ");
                     String senhaUser = sc.next();
-                    while (!senhaUser.equals("gatinho123@") && contador <= 2) {
+                    while(!senhaUser.equals("gatinho123@") && contador <= 2) {
                         System.out.println("A senha está incorreta! Tente novamente. Tentativas restantes: "+(3-contador));
                         contador++;
                         senhaUser = sc.next();
                     }
-                    if (senhaUser.equals("gatinho123@")){
+                    if(senhaUser.equals("gatinho123@")){
                         System.out.println("Insira um novo limite para esse cartão de crédito: ");
-                        double alteracao = sc.nextDouble();
-                        c.alterarLimite(alteracao);
+                        double limite = sc.nextDouble();
+                        c.alterarLimite(limite);
                     }
                     else {
                         System.out.println("Acesso negado, senha incorreta!");
@@ -58,7 +58,7 @@ public class principal {
                     break;
             }
         }   
-        while (opcao != 0);
+        while(opcao != 0);
     sc.close(); 
     }
 }

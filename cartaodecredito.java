@@ -8,22 +8,22 @@ public class cartaodecredito {
 
     Scanner entrada = new Scanner(System.in);
 
-    public void setNumero (int numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }
     public int getNumero() {
         return numero;
     }
 
-    public void setNomeTitular (String nomeTitular) {
-        this.nomeTitular = nomeTitular.toUpperCase();
+    public void setNomeTitular(String nomeTitular) {
+        this.nomeTitular = nomeTitular.toUpperCase(); // Exibir em letras maiusculas
     }
     public String getNomeTitular() {
         return nomeTitular;
     }
 
-    public void setCpf (String cpf) {
-        this.cpf = cpf;
+    public void setCpf(String cpf) {
+        this.cpf = cpf.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4"); // Formatar pontuação no CPF
     }
     public String getCpf() {
         return cpf;
@@ -36,7 +36,7 @@ public class cartaodecredito {
         return limite;
     }
     
-    public void setConsultarTotalFatura (double totalFatura){
+    public void setConsultarTotalFatura(double totalFatura) {
         this.totalFatura = totalFatura;
     }
     public double getConsultarTotalFatura() {
@@ -44,7 +44,7 @@ public class cartaodecredito {
     }
 
     public void realizarCompra(double valor) {
-        if (valor <= this.limite) {
+        if(valor <= this.limite) {
             this.limite = limite - valor; // limite -= valor;
             this.totalFatura = totalFatura + valor; // saldo += valor
             System.out.println("A sua compra de " + valor + " foi efetuada com sucesso!");
@@ -56,7 +56,7 @@ public class cartaodecredito {
 
     public void alterarLimite(double alteracao) {
         do {
-            if (alteracao != this.limite) {
+            if(alteracao != this.limite) {
                 this.limite = alteracao;
                 System.out.println("Limite do cartão foi atualizado com sucesso!");
             }
@@ -64,6 +64,6 @@ public class cartaodecredito {
                 System.out.println("Insira um valor maior ou menor que o limite do cartão atual.");
             }
         }
-        while (alteracao > limite && alteracao < limite);
+        while(alteracao > limite && alteracao < limite);
     }
 }
