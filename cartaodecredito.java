@@ -16,14 +16,16 @@ public class cartaodecredito {
     }
 
     public void setNomeTitular(String nomeTitular) {
-        this.nomeTitular = nomeTitular.toUpperCase(); // Exibir em letras maiusculas
+        // Exibir em letras maiusculas
+        this.nomeTitular = nomeTitular.toUpperCase();
     }
     public String getNomeTitular() {
         return nomeTitular;
     }
 
     public void setCpf(String cpf) {
-        this.cpf = cpf.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4"); // Formatar pontuação no CPF
+        // Formatar pontuação no CPF
+        this.cpf = cpf.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4");
     }
     public String getCpf() {
         return cpf;
@@ -58,10 +60,10 @@ public class cartaodecredito {
         do {
             if(alteracao != this.limite) {
                 this.limite = alteracao;
-                System.out.println("Limite do cartão foi atualizado com sucesso!");
+                System.out.println("O limite do cartão foi atualizado com sucesso!");
             }
             else {
-                System.out.println("Insira um valor maior ou menor que o limite do cartão atual.");
+                System.out.println("Por favor, insira um valor maior ou menor que o limite atual do cartão.");
             }
         }
         while(alteracao > limite && alteracao < limite);

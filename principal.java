@@ -34,7 +34,7 @@ public class principal {
                     c.realizarCompra(valor);
                     break;
                 case 4:
-                    System.out.println("Digite a senha de administrador: ");
+                    System.out.println("Digite a senha do administrador: ");
                     String senhaUser = sc.next();
                     while(!senhaUser.equals("gatinho123@") && contador <= 2) {
                         System.out.println("A senha está incorreta! Tente novamente. Tentativas restantes: "+(3-contador));
