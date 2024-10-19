@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class principal {
     public static void main(String[] args) {
         cartaodecredito c = new cartaodecredito();
-        c.numero = 1;
-        c.nomeTitular = "Luca";
-        c.cpf = "123.456.789-10";
-        c.limite = 100;
+        c.setNumero(1);
+        c.setNomeTitular("Luca");
+        c.setCpf("123.456.789-99");
+        c.setLimite(100);
         Scanner sc = new Scanner(System.in);
         
         int opcao;
@@ -23,10 +23,10 @@ public class principal {
 
             switch (opcao) {
                 case 1:
-                    System.out.println("Seu limite é de: " +c.consultarLimite()+ " reais.");
+                    System.out.println("Seu limite é de: " +c.getLimite()+ " reais.");
                     break;
                 case 2:
-                    System.out.println("Sua fatura está em: " +c.consultarTotalFatura()+ " reais.");
+                    System.out.println("Sua fatura está em: " +c.getConsultarTotalFatura()+ " reais.");
                     break;
                 case 3:
                     System.out.println("Digite o valor da compra: ");

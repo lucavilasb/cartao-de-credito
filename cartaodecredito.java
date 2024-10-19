@@ -1,18 +1,45 @@
 import java.util.Scanner;
 public class cartaodecredito {
-    int numero;
-    String nomeTitular;
-    String cpf;
-    double limite;
-    double totalFatura;
+    private int numero;
+    private String nomeTitular;
+    private String cpf;
+    private double limite;
+    private double totalFatura;
 
     Scanner entrada = new Scanner(System.in);
 
-    public double consultarLimite() {
-        return limite;
+    public void setNumero (int numero) {
+        this.numero = numero;
+    }
+    public int getNumero() {
+        return numero;
     }
 
-    public double consultarTotalFatura() {
+    public void setNomeTitular (String nomeTitular) {
+        this.nomeTitular = nomeTitular.toUpperCase();
+    }
+    public String getNomeTitular() {
+        return nomeTitular;
+    }
+
+    public void setCpf (String cpf) {
+        this.cpf = cpf;
+    }
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setLimite(double limite) {
+        this.limite = limite;
+    }
+    public double getLimite() {
+        return limite;
+    }
+    
+    public void setConsultarTotalFatura (double totalFatura){
+        this.totalFatura = totalFatura;
+    }
+    public double getConsultarTotalFatura() {
         return totalFatura;
     }
 
