@@ -17,7 +17,7 @@ public class principal {
             System.out.println("2 - Consultar Fatura;");
             System.out.println("3 - Realizar Compra.");
             System.out.println("4 - Alterar Limite do Cartão;");
-            System.out.println("5 - Alterar Dados do Cartão de Crédito;");
+            // System.out.println("5 - Alterar Dados do Cartão de Crédito;");
             System.out.println("0 - Sair.");
         
             opcao = sc.nextInt();
@@ -27,7 +27,7 @@ public class principal {
                     System.out.println("Seu limite é de: " +c.getLimite()+ " reais.");
                     break;
                 case 2:
-                    System.out.println("Sua fatura está em: " +c.getConsultarTotalFatura()+ " reais.");
+                    System.out.println("Sua fatura está em: " +c.getTotalFatura()+ " reais.");
                     break;
                 case 3:
                     System.out.println("Digite o valor da compra: ");
@@ -51,6 +51,19 @@ public class principal {
                         System.out.println("Acesso negado, senha incorreta!");
                     }
                     break;
+
+                case 0:
+                    System.out.println("Obrigado pela preferência, volte sempre!");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
+            }
+        }   
+        while(opcao != 0);
+    sc.close(); 
+    }
+}
 
                 // case 5:
                 //     System.out.println("Digite a senha do administrador: ");
@@ -77,18 +90,3 @@ public class principal {
                 //         }
                 //     break;
                 //     }
-
-                case 0:
-                    System.out.println("Obrigado pela preferência, volte sempre!");
-                    break;
-                default:
-                    System.out.println("Opção inválida!");
-                    break;
-            }
-        }   
-        while(opcao != 0);
-    sc.close(); 
-    }
-}
-
-

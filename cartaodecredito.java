@@ -38,17 +38,17 @@ public class cartaodecredito {
         return limite;
     }
     
-    public void setConsultarTotalFatura(double totalFatura) {
+    public void setTotalFatura(double totalFatura) {
         this.totalFatura = totalFatura;
     }
-    public double getConsultarTotalFatura() {
+    public double getTotalFatura() {
         return totalFatura;
     }
 
     public void realizarCompra(double valor) {
-        if(valor <= this.limite) {
-            this.limite = limite - valor; // limite -= valor;
-            this.totalFatura = totalFatura + valor; // saldo += valor
+        if(valor <= getLimite()) {
+            setLimite(limite-valor);
+            setTotalFatura(totalFatura+valor);
             System.out.println("A sua compra de " + valor + " foi efetuada com sucesso!");
         }
         else {
@@ -58,14 +58,14 @@ public class cartaodecredito {
 
     public void alterarLimite(double alteracao) {
         do {
-            if(alteracao != this.limite) {
-                this.limite = alteracao;
+            if(alteracao != getLimite()) {
+                setLimite(alteracao);
                 System.out.println("O limite do cartão foi atualizado com sucesso!");
             }
             else {
                 System.out.println("Por favor, insira um valor maior ou menor que o limite atual do cartão.");
             }
         }
-        while(alteracao > limite && alteracao < limite);
+        while(alteracao > getLimite() && alteracao < getLimite());
     }
 }
