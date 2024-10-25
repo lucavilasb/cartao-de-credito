@@ -5,6 +5,7 @@ public class cartaodecredito {
     private String cpf;
     private double limite;
     private double totalFatura;
+    private double cashBack;
 
     Scanner entrada = new Scanner(System.in);
 
@@ -45,11 +46,18 @@ public class cartaodecredito {
         return totalFatura;
     }
 
+    public void setCashBack(double cashBack) {
+        this.cashBack = limite;
+    }
+    public double getCashBack() {
+        return cashBack;
+    }
+
     public void realizarCompra(double valor) {
         if(valor <= getLimite()) {
             setLimite(limite-valor);
             setTotalFatura(totalFatura+valor);
-            System.out.println("A sua compra de " + valor + " foi efetuada com sucesso!");
+            System.out.println("A sua compra de " +valor+ " foi efetuada com sucesso!");
         }
         else {
             System.out.println("Você não possui limite necessário para essa compra.");
@@ -68,4 +76,25 @@ public class cartaodecredito {
         }
         while(alteracao > getLimite() && alteracao < getLimite());
     }
+
+    public void comprarComCashBack(double valorCash) {
+        if(valorCash <= getLimite()) {
+            setLimite((limite-valorCash)+valorCash/getCashBack());
+            setTotalFatura(totalFatura+valorCash);
+            System.out.println("A sua compra de " +valorCash+ " foi efetuada com sucesso! Você obteve " +getCashBack()+ " de cashback.");
+        }
+        else {
+            System.out.println("Você não possui limite necessário para essa compra.");
+        }
+    }
+
+
+    public void criarCartao(int numero, String titular, String cpf, double limite) {
+        System.out.println("Dados criados com sucesso!");
+    }
+
+    public void criarCartaoPremium(int numero, String titular, String cpf, double limite, double cashBack) {
+        System.out.println("Dados criados com sucesso!");
+    }
+
 }
