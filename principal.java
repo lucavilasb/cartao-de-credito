@@ -135,28 +135,3 @@ public class principal {
     }
 }
 
-                // case 5:
-                //     System.out.println("Digite a senha do administrador: ");
-                //     String senhaDados = sc.next();
-                //     while(!senhaDados.equals("gatinho123@") && contador <= 2) {
-                //         System.out.println("A senha está incorreta! Tente novamente. Tentativas restantes: "+(3-contador));
-                //         contador++;
-                //         senhaDados = sc.next();
-                //     if(senhaDados.equals("gatinho123@")) {
-                //         System.out.println("Insira novo número do cartão: ");
-                //             int numero = sc.nextInt();
-                //             c.setNumero(numero);
-                //         System.out.println("Insira o nome do titular: ");
-                //             String titular = sc.next();
-                //             c.setNomeTitular(titular);
-                //         System.out.println("Insira o CPF do titular: ");
-                //             String cpf = sc.next();
-                //             c.setCpf(cpf);
-                //         System.out.println("Dados alterados com sucesso!");
-                //     }
-                //     else {
-                //         System.out.println("Acesso negado, senha incorreta!");
-                //         contador = 0;
-                //         }
-                //     break;
-                //     }
