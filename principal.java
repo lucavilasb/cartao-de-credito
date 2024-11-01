@@ -16,11 +16,7 @@ public class principal {
         double limite, cashBack;
 
         do {
-            //mudar limite para saldo e fazer um novo limite
-            //adicionar comandos para verificar os dados do cartão de crédito
-            //se a pessoa nao criar o cartao tentar colocar como undefined
-            //Consultar o valor do cashback
-            //colocar senha para criar cartao e colocar a opção embaixo
+           
             System.out.println("1 - Consultar Limite;");
             System.out.println("2 - Consultar Fatura;");
             System.out.println("3 - Realizar compra com cashback;");
