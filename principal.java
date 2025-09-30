@@ -2,38 +2,38 @@ import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        CartaoDeCredito c = new CartaoDeCredito(123, "Eliane", "12312352636");
+        CreditCard c = new CreditCard(123, "Haru", "12312352636");
         c.setCpf("12312352636");
-        c.setLimite(100);
+        c.setLimit(100);
         Scanner sc = new Scanner(System.in);
 
-        int opcao = 1;
+        int option = 1;
 
         do {
-            System.out.println("1 - Consultar Limite");
-            System.out.println("2 - Consultar Fatura");
-            System.out.println("3 - Realizar compra");
-            System.out.println("0 - Sair");
+            System.out.println("1 - Consult Limit");
+            System.out.println("2 - Consult Invoice");
+            System.out.println("3 - Make Purchase");
+            System.out.println("0 - Exit");
 
-            opcao = sc.nextInt();
+            option = sc.nextInt();
 
             
-            switch (opcao) {
+            switch (option) {
                 case 1:
-                    System.out.println(c.consultarLimite());
+                    System.out.println(c.consultLimit());
                     break;
                 case 2:
-                    System.out.println(c.consultarTotalFatura());
+                    System.out.println(c.consultTotalInvoice());
                     break;
                 case 3:
-                    System.out.println("Digite o valor da compra");
-                    double valor = sc.nextDouble();
-                    c.realizarCompra(valor);
+                    System.out.println("Enter the purchase amount:");
+                    double value = sc.nextDouble();
+                    c.makePurchase(value);
                     break;
                 default:
-                    System.out.println("Opção inválida");
+                    System.out.println("Invalid option.");
                     break;
             }
-        } while (opcao != 0);
+        } while (option != 0);
     }
 }
