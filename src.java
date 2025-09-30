@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Src {
+public class src {
     public static void main(String[] args) {
         CreditCard c = new CreditCard(123, "Haru", "12312352636");
         c.setCpf("12312352636");
