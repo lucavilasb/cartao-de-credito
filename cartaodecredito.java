@@ -1,100 +1,98 @@
 import java.util.Scanner;
-public class cartaodecredito {
-    private int numero;
-    private String nomeTitular;
+public class creditcard {
+    private int number;
+    private String titularName;
     private String cpf;
-    private double limite;
-    private double totalFatura;
+    private double limit;
+    private double totalInvoice;
     private double cashBack;
 
-    Scanner entrada = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
 
-    public void setNumero(int numero) {
-        this.numero = numero;
+    public void setNumber(int number) {
+        this.number = number;
     }
-    public int getNumero() {
-        return numero;
+    public int getNumber() {
+        return number;
     }
 
-    public void setNomeTitular(String nomeTitular) {
-        // Exibir em letras maiusculas
-        this.nomeTitular = nomeTitular.toUpperCase();
+    public void setTitularName(String nameTitular) {
+        this.nameTitular = nameTitular.toUpperCase();
     }
-    public String getNomeTitular() {
-        return nomeTitular;
+    public String getNameTitular() {
+        return nameTitular;
     }
 
     public void setCpf(String cpf) {
-        // Formatar pontuação no CPF
         this.cpf = cpf.replaceAll("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4");
     }
     public String getCpf() {
         return cpf;
     }
 
-    public void setLimite(double limite) {
-        this.limite = limite;
+    public void setLimit(double limit) {
+        this.limit = limit;
     }
-    public double getLimite() {
-        return limite;
+    public double getLimit() {
+        return limit;
     }
     
-    public void setTotalFatura(double totalFatura) {
-        this.totalFatura = totalFatura;
+    public void setTotalInvoice(double totalInvoice) {
+        this.totalInvoice = totalInvoice;
     }
-    public double getTotalFatura() {
-        return totalFatura;
+    public double getTotalInvoice() {
+        return totalInvoice;
     }
 
     public void setCashBack(double cashBack) {
-        this.cashBack = limite;
+        this.cashBack = limit;
     }
     public double getCashBack() {
         return cashBack;
     }
 
-    public void realizarCompra(double valor) {
-        if(valor <= getLimite()) {
-            setLimite(limite-valor);
-            setTotalFatura(totalFatura+valor);
-            System.out.println("A sua compra de " +valor+ " foi efetuada com sucesso!");
+    public void makePurchase(double value) {
+        if(value <= getLimit()) {
+            setLimit(limit-value);
+            setTotalInvoice(totalInvoice+value);
+            System.out.println("Your purchase of " +valor+ " was made successfully!");
         }
         else {
-            System.out.println("Você não possui limite necessário para essa compra.");
+            System.out.println("You do not have the necessary limit for this purchase.");
         }
     }
 
-    public void alterarLimite(double alteracao) {
+    public void changeLimit(double change) {
         do {
-            if(alteracao != getLimite()) {
-                setLimite(alteracao);
-                System.out.println("O limite do cartão foi atualizado com sucesso!");
+            if(change != getLimit()) {
+                setLimit(change);
+                System.out.println("The card limit has been updated successfully!");
             }
             else {
-                System.out.println("Por favor, insira um valor maior ou menor que o limite atual do cartão.");
+                System.out.println("Please enter an amount greater or less than the card's current limit.");
             }
         }
-        while(alteracao > getLimite() && alteracao < getLimite());
+        while(change > getLimit() && change < getLimit());
     }
 
-    public void comprarComCashBack(double valorCash) {
-        if(valorCash <= getLimite()) {
-            setLimite((limite-valorCash)+valorCash/getCashBack());
-            setTotalFatura(totalFatura+valorCash);
-            System.out.println("A sua compra de " +valorCash+ " foi efetuada com sucesso! Você obteve " +getCashBack()+ " de cashback.");
+    public void buyWithCashBack(double valueCash) {
+        if(valueCash <= getLimit()) {
+            setLimit((limit-valueCash)+valueCash/getCashBack());
+            setTotalInvoice(totalInvoice+valueCash);
+            System.out.println("Your purchase of " +valueCash+ " was made successfully! You got " +getCashBack()+ " cashback.");
         }
         else {
-            System.out.println("Você não possui limite necessário para essa compra.");
+            System.out.println("You do not have the necessary limit for this purchase.");
         }
     }
 
 
-    public void criarCartao(int numero, String titular, String cpf, double limite) {
-        System.out.println("Dados criados com sucesso!");
+    public void makeCard(int number, String titularName, String cpf, double limit) {
+        System.out.println("Created successfully!");
     }
 
-    public void criarCartaoPremium(int numero, String titular, String cpf, double limite, double cashBack) {
-        System.out.println("Dados criados com sucesso!");
+    public void makeCardPremium(int number, String titularName, String cpf, double limit, double cashBack) {
+        System.out.println("Created successfully!");
     }
 
 }
